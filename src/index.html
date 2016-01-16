@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="assets/css/style.css" />
 
 	<script type="text/javascript" src="assets/js/donut.js"></script>
-	<script type="text/javascript" src="assets/js/multiplayer.js"></script>
+	<script type="text/javascript" src="assets/js/multiplayer.mock.js"></script>
 	<script type="text/javascript" src="assets/js/studio.js"></script>
 </head>
 <body>
@@ -52,14 +52,6 @@
 				<h2 class="yellow">Stripes</h2>
 				<div id="donut-obj-stripes"></div>
 			</div>
-
-			<div class="panel push-me">
-				<button class="button blue" data-action="screenshot">Save screenshot</button>
-				<button class="button red" data-action="new-donut">New donut</button>
-				<button class="button yellow" data-action="random-donut">Random donut</button>
-				<button class="button green" data-action="undo">Undo</button>
-				<button class="button blue" data-action="account">Change username</button>
-			</div>
 		</div>
 
 		<div class="column medium">
@@ -67,14 +59,21 @@
 				<div id="progress">0%</div>
 				<canvas id="donut"></canvas>
 			</div>
-			<div class="panel push-me multiplayer-item">
+			<!--<div class="panel push-me multiplayer-item">
 				<h2 class="blue">Now online (<span id="mp-online-count">0</span>)</h2>
 				<div id="mp-users"></div>
-			</div>
+			</div>-->
 		</div>
 
 		<div class="column small clear-after">
-			<div class="panel multiplayer-item">
+			<div class="panel">
+				<button class="button blue" data-action="screenshot">Save screenshot</button>
+				<button class="button red" data-action="new-donut">New donut</button>
+				<button class="button yellow" data-action="random-donut">Random donut</button>
+				<button class="button green" data-action="undo">Undo</button>
+				<!--<button class="button blue multiplayer-item" data-action="account">Change username</button>-->
+			</div>
+			<!--<div class="panel multiplayer-item">
 				<h2 class="red">Chat</h2>
 				<div id="mp-chatlog"></div>
 				<form id="mp-chat">
@@ -82,11 +81,11 @@
 					<input class="verdana" id="mp-chat-msg" type="text" min="1" />
 					<button type="submit" class="button yellow" data-action="chat">Send</button>
 				</form>
-			</div>
+			</div>-->
 
 			<footer class="panel blue push-me">
 				Donut Studio V0.1<br />
-				&copy; HetIsNiels 2015<br />
+				&copy; Niels van Velzen 2015 - 2016<br />
 				Assets by <a href="//kenney.nl" target="_blank">Kenney</a>
 			</footer>
 		</div>
@@ -94,13 +93,13 @@
 		<div class="clear"></div>
 	</div>
 
-	<div id="overlay">
+	<!--<div id="overlay" class="multiplayer-item">
 		<form id="overlay-account" class="overlay panel">
 			<label for="account-username">Username</label>
 			<input id="account-username" type="text" min="3" max="16" autofocus="autofocus" />
 			<button type="submit" class="button red" data-action="create-account">Join the studio!</button>
 		</form>
-	</div>
+	</div>-->
 
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
