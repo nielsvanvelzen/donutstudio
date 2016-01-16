@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+
+	<title>Donut Studio</title>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon-180x180.png">
+	<meta name="apple-mobile-web-app-title" content="Donut Studio">
+	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+	<link rel="icon" type="image/png" href="assets/img/favicon/favicon-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="assets/img/favicon/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="assets/img/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="assets/img/favicon/favicon-32x32.png" sizes="32x32">
+	<meta name="msapplication-TileColor" content="#ffc40d">
+	<meta name="msapplication-TileImage" content="assets/img/favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="assets/img/favicon/browserconfig.xml">
+	<meta name="application-name" content="Donut Studio">
+
+	<link rel="stylesheet" href="assets/css/style.css" />
+
+	<script type="text/javascript" src="assets/js/donut.js"></script>
+	<script type="text/javascript" src="assets/js/multiplayer.js"></script>
+	<script type="text/javascript" src="assets/js/studio.js"></script>
+</head>
+<body>
+	<header class="panel">
+		<h1 class="container">Donut Studio</h1>
+	</header>
+
+	<div class="container push-me">
+		<div class="column small">
+			<div class="panel">
+				<h2 class="red">Donut</h2>
+				<div id="donut-obj-donut"></div>
+
+				<h2 class="green">Glazing</h2>
+				<div id="donut-obj-glazing"></div>
+
+				<h2 class="blue">Sprinkles</h2>
+				<div id="donut-obj-sprinkles"></div>
+
+				<h2 class="yellow">Stripes</h2>
+				<div id="donut-obj-stripes"></div>
+			</div>
+
+			<div class="panel push-me">
+				<button class="button blue" data-action="screenshot">Save screenshot</button>
+				<button class="button red" data-action="new-donut">New donut</button>
+				<button class="button yellow" data-action="random-donut">Random donut</button>
+				<button class="button green" data-action="undo">Undo</button>
+				<button class="button blue" data-action="account">Change username</button>
+			</div>
+		</div>
+
+		<div class="column medium">
+			<div class="panel">
+				<div id="progress">0%</div>
+				<canvas id="donut"></canvas>
+			</div>
+			<div class="panel push-me multiplayer-item">
+				<h2 class="blue">Now online (<span id="mp-online-count">0</span>)</h2>
+				<div id="mp-users"></div>
+			</div>
+		</div>
+
+		<div class="column small clear-after">
+			<div class="panel multiplayer-item">
+				<h2 class="red">Chat</h2>
+				<div id="mp-chatlog"></div>
+				<form id="mp-chat">
+					<label for="mp-chat-msg">Message: </label>
+					<input class="verdana" id="mp-chat-msg" type="text" min="1" />
+					<button type="submit" class="button yellow" data-action="chat">Send</button>
+				</form>
+			</div>
+
+			<footer class="panel blue push-me">
+				Donut Studio V0.1<br />
+				&copy; HetIsNiels 2015<br />
+				Assets by <a href="//kenney.nl" target="_blank">Kenney</a>
+			</footer>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div id="overlay">
+		<form id="overlay-account" class="overlay panel">
+			<label for="account-username">Username</label>
+			<input id="account-username" type="text" min="3" max="16" autofocus="autofocus" />
+			<button type="submit" class="button red" data-action="create-account">Join the studio!</button>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-30987193-1']);
+		_gaq.push(['_setDomainName', 'hetisniels.nl']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>
